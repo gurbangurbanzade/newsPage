@@ -1,0 +1,30 @@
+.header {
+  max-width: 1200px;
+  margin: auto;
+  height: 50px;
+  background-color: gray;
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    li {
+      border: 1px solid red;
+      height: 100%;
+    }
+
+    .parent {
+      position: relative;
+      .header__nav__subMenu {
+        display: none;
+        position: absolute;
+        background-color: green;
+        top: 100%;
+      }
+
+      &:hover .header__nav__subMenu {
+        display: block;
+      }
+    }
+  }
+}

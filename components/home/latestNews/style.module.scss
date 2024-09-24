@@ -1,0 +1,15 @@
+.latestNews {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  .cart {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    &__imgBox {
+      position: relative;
+      width: 200px;
+      height: 200px;
+    }
+  }
+}
