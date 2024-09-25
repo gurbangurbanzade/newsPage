@@ -1,8 +1,22 @@
+"use client";
 import Link from "next/link";
 import React from "react";
 import styles from "./style.module.scss";
+import { useStore } from "@/store/cart";
 
 const Header = () => {
+  const { customCart } = useStore();
+
+  // const count = customCart.reduce((acc, item) => {
+  //   return acc + item.count;
+  // }, 0);
+
+  let count = 0;
+
+  for (let i = 0; i < customCart.length; i++) {
+    count += customCart[i].count;
+  }
+
   const navElements = [
     { title: "Home", href: "/" },
     { title: "About", href: "/about" },
@@ -40,6 +54,19 @@ const Header = () => {
                 )}
               </li>
             ))}
+
+          <li>
+            <Link href="/cart">
+              Cart
+              <span>-{count}</span>
+            </Link>
+          </li>
+          <li>
+            <Link href="/fav">
+              Favorites
+              <span>-{2}</span>
+            </Link>
+          </li>
         </ul>
       </div>
     </section>
