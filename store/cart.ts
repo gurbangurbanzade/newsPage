@@ -9,6 +9,13 @@ interface ICartItem {
 export type Store = {
   customCart: ICartItem[];
   customFav: string[];
+  color: boolean;
+  colorId: string;
+  size: boolean;
+  sizeId: string;
+  category: boolean;
+  categoryId: string;
+
   setFields: (fields: Partial<Store>) => void;
   setClose: () => void;
 };
@@ -16,6 +23,12 @@ export type Store = {
 const initialValue = {
   customCart: [],
   customFav: [],
+  color: false,
+  colorId: "",
+  size: false,
+  sizeId: "",
+  category: false,
+  categoryId: "",
 };
 
 // Initial state
